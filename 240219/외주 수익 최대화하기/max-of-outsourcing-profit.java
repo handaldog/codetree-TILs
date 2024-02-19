@@ -63,8 +63,8 @@ public class Main {
                 
                 add += career[result[i]].price;
             }
-            System.out.println("오면안돼");
-                System.out.println(idx);
+            // System.out.println("오면안돼");
+                // System.out.println(idx);
             answer = Math.max(answer, add);
             return;
         }

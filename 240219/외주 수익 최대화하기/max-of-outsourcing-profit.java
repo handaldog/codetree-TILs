@@ -49,7 +49,7 @@ public class Main {
     public static void comb(int idx, int start, int cnt){
         if(idx == cnt){
             int add = 0;
-            boolean workvisit[] = new boolean[6];
+            boolean workvisit[] = new boolean[20];
             for(int i=0;i<idx;i++){
                 for(int j=result[i];j<result[i] + career[result[i]].time;j++){
                     if(workvisit[j])return;

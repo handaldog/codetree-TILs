@@ -30,8 +30,12 @@ public class Main {
         for(int i=0;i<n;i++){
             int time = sc.nextInt();
             int price = sc.nextInt();
-            answer = Math.max(answer, price);
-            career[i] = new work(time, price);
+            if(i+time < n){
+             answer = Math.max(answer, price);
+               
+            }
+            career[i] = new work(time, price); 
+            
         }
 
         // System.out.println("2: " + answer);

@@ -40,9 +40,9 @@ public class Main {
             result = new int [i];
             comb(0,0,i);
 
-            System.out.println(answer);
+           
         }
-
+        System.out.println(answer);
 
     }
 

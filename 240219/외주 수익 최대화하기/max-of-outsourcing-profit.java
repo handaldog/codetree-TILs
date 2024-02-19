@@ -49,15 +49,22 @@ public class Main {
     public static void comb(int idx, int start, int cnt){
         if(idx == cnt){
             int add = 0;
-            boolean workvisit[] = new boolean[20];
+            boolean workvisit[] = new boolean[n];
             for(int i=0;i<idx;i++){
                 for(int j=result[i];j<result[i] + career[result[i]].time;j++){
-                    if(workvisit[j])return;
+                    try{
+                        if(workvisit[j])return;
+                    }catch(Exception e){
+                        return;
+                    }
+                    
                     workvisit[j] = true;                    
                 }
                 
                 add += career[result[i]].price;
             }
+            System.out.println("오면안돼");
+                System.out.println(idx);
             answer = Math.max(answer, add);
             return;
         }

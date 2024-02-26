@@ -16,7 +16,7 @@ public class Main {
 
         area  = new int [n][n];
         visit = new boolean[n];
-        result = new int [4];
+        result = new int [n];
 
         for(int i=0;i<n;i++){
             for(int j=0;j<n;j++){

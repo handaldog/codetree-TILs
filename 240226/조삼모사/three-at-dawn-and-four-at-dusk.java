@@ -38,17 +38,10 @@ public class Main {
                 for(int j=0;j<n/2;j++){
                     for(int h=0;h<n/2;h++){
                         if(j == h)continue;
-                         cal1 += area[result[j]][result[h]];
-
+                            cal1 += area[result[j]][result[h]];
+                            cal2 += area[result[j+(n/2)]][result[h+(n/2)]];
                     }
                     
-                }
-                for(int j=n/2;j<n;j++){
-                    for(int h=n/2;h<n;h++){
-                        if(j == h)continue;
-                         cal2 += area[result[j]][result[h]];
-
-                    }
                 }
                 
                 min = Math.min(min, Math.abs(cal1 - cal2));

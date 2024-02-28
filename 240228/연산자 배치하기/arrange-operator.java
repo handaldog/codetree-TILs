@@ -24,6 +24,7 @@ public class Main {
 
         for(int i=0;i<n;i++){
             int num = sc.nextInt();
+            if(num == 0) continue;
             for(int j=0;j<num;j++){
                 calc.add(i);
             }

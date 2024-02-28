@@ -5,7 +5,7 @@ public class Main {
     static boolean visit[];
     static int result[];
     static ArrayList<Integer> calc;
-    static long min = 1000000000000;
+    static long min = 100000000000;
     static long max = -1254895;
     static long number[];
     

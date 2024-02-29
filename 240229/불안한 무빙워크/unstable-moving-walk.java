@@ -57,7 +57,7 @@ public class Main {
             }
 
             // 2.
-            for(int i=0;i<n-1;i++){
+            for(int i=n-2;i>=0;i--){
                 if(moving.get(i).person > 0 ){
                     // 옮겨갈 자리에 안정성이 0이거나 person수 0보다 크면 continue
                     if(moving.get(i+1).person > 0 || moving.get(i+1).safe == 0)continue;

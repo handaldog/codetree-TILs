@@ -42,16 +42,17 @@ public class Main {
         
 
         while(true){
-            // System.out.println("야");
+            
             answer++;
 
             // 1.
-            work lastwork = moving.get((n*2)-1);
-            moving.remove((n*2)-1);
-            moving.addFirst(lastwork);
+            
+            moving.addFirst(moving.get((n*2)-1));
+            // System.out.println("야" + moving.get(0).num);
+            moving.remove(n*2);
 
             if(moving.get(n-1).person > 0){
-                moving.add(3, new work(moving.get(n-1).num, moving.get(n-1).safe, moving.get(n-1).person-1));
+                moving.add(n-1, new work(moving.get(n-1).num, moving.get(n-1).safe, moving.get(n-1).person-1));
                 moving.remove(n);
             }
 

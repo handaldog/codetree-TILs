@@ -60,7 +60,7 @@ public class Main {
             for(int i=n-2;i>=0;i--){
                 if(moving.get(i).person > 0 ){
                     // 옮겨갈 자리에 안정성이 0이거나 person수 0보다 크면 continue
-                    if(moving.get(i+1).person > 0 || moving.get(i+1).safe == 0)continue;
+                    if(moving.get(i+1).person == 0 && moving.get(i+1).safe > 0){
 
                     // 원래자리 person 수 없애고
                     moving.add(i, new work(moving.get(i).num, moving.get(i).safe, moving.get(i).person-1));
@@ -90,6 +90,8 @@ public class Main {
 
                     moving.remove(i+2);
                     }
+                }
+            }
             
             // 3.
             if(moving.get(0).person == 0 && moving.get(0).safe > 0){
@@ -109,4 +111,3 @@ public class Main {
             
        }
     }
-}

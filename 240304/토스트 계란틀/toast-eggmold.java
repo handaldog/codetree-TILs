@@ -13,8 +13,8 @@ public class Main {
     }
 
     static int checkbox[][];
-    static int di[] = {0,1,-1,0};
-    static int dj[] = {1,0,0,-1};
+    static int di[] = {0,1};
+    static int dj[] = {1,0};
     static int n,l,r;
     static int eggbox[][];
    
@@ -94,7 +94,7 @@ public class Main {
 
         point po = que.poll();
 
-       for(int k=0;k<4;k++){
+       for(int k=0;k<2;k++){
             int nexti = po.x + di[k];
             int nextj = po.y + dj[k];
                 if(nexti >= 0 && nextj >= 0 && nexti < n && nextj < n && !visit[nexti][nextj]){

@@ -102,6 +102,9 @@ public class Main {
             if(nexti >=0 && nextj >=0 && nexti < n && nextj < n && !visit[nexti][nextj]){
                 if(local[nexti][nextj] == 2 && localcopy[nexti][nextj]){
                     distance += po.costs+1;
+                    if(distance >= min){
+                        return;
+                    }
                     return;
                 }
                 else{

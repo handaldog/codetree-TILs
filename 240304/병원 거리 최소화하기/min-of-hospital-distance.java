@@ -19,7 +19,7 @@ public class Main {
             
         }
     }
-    static long min = 10000L;
+    static long min = 1001;
     static int n,m;
     static long distance;
     static int result[];
@@ -63,6 +63,7 @@ public class Main {
             distance = 0;
             localcopy = new boolean[n][n];
             for(int i=0;i<m;i++){
+                // System.out.println(result[i]);
                 localcopy[hospital.get(result[i]).x][hospital.get(result[i]).y] = true;
             }
 

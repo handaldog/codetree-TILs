@@ -4,14 +4,7 @@ public class Main {
 
     static class point{
         int x;
-        int y;
-        int costs;
-
-        point(int x, int y, int costs){
-            this.x = x;
-            this.y = y;
-            this.costs = costs;
-        }
+        int y;     
 
         point(int x, int y){
             this.x = x;
@@ -19,9 +12,11 @@ public class Main {
             
         }
     }
-    static long min = 10000;
+    static long realmin = 10000;
+
     static int n,m;
     static long distance;
+    static int results;
     static int result[];
     static int local[][];
     static boolean localcopy[][];
@@ -45,7 +40,7 @@ public class Main {
                     hospital.add(new point(i,j));
                 }
                 if(local[i][j] == 1){
-                    person.add(new point(i,j,0));
+                    person.add(new point(i,j));
                 }
             }
         }
@@ -54,24 +49,25 @@ public class Main {
 
         comb(0,0);
 
-        System.out.println(min);
+        System.out.println(realmin);
 
     }
 
     public static void comb(int start, int idx){
         if(idx == m){
-            distance = 0;
-            localcopy = new boolean[n][n];
-            for(int i=0;i<m;i++){
-                // System.out.println(result[i]);
-                localcopy[hospital.get(result[i]).x][hospital.get(result[i]).y] = true;
-            }
-
+           results = 0;
             for(int i=0;i<person.size();i++){
-                bfs(person.get(i).x, person.get(i).y,0);
-        }
-
-        min = Math.min(min, distance);
+                long min = 10000;
+                distance = 0;
+               for(int j=0;j<idx;j++){
+                    distance = Math.abs(person.get(i).x - hospital.get(result[j]).x) + 
+                    Math.abs(person.get(i).y - hospital.get(result[j]).y);
+                    // System.out.println(distance);
+                    min = Math.min(distance, min);
+               }
+               results += min;
+            }
+            realmin = Math.min(results, realmin);
             return;
         }
         for(int i=start;i<hospital.size();i++){
@@ -80,43 +76,43 @@ public class Main {
         }
     }
 
-    public static void bfs(int x, int y, int costs){
+    // public static void bfs(int x, int y, int costs){
         
-        Queue<point> que = new LinkedList<>();
+    //     Queue<point> que = new LinkedList<>();
 
-        boolean visit[][] = new boolean[n][n];
+    //     boolean visit[][] = new boolean[n][n];
 
-        que.offer(new point(x,y,costs));
+    //     que.offer(new point(x,y,costs));
 
-        int di[] = {0,0,1,-1};
-        int dj[] = {1,-1,0,0};
+    //     int di[] = {0,0,1,-1};
+    //     int dj[] = {1,-1,0,0};
 
-        while(!que.isEmpty()){
+    //     while(!que.isEmpty()){
 
-        point po = que.poll();
+    //     point po = que.poll();
 
-        visit[po.x][po.y] = true;
+    //     visit[po.x][po.y] = true;
 
-          for(int k=0;k<4;k++){
-            int nexti = po.x + di[k];
-            int nextj = po.y + dj[k];
+    //       for(int k=0;k<4;k++){
+    //         int nexti = po.x + di[k];
+    //         int nextj = po.y + dj[k];
 
-            if(nexti >=0 && nextj >=0 && nexti < n && nextj < n && !visit[nexti][nextj]){
-                if(local[nexti][nextj] == 2 && localcopy[nexti][nextj]){
-                    distance += po.costs+1;
-                    if(distance >= min){
-                        return;
-                    }
-                    return;
-                }
-                else{
-                    visit[nexti][nextj] = true;
-                    que.offer(new point(nexti,nextj, po.costs+1));
-                    }
-                }
-            }  
-        }
-        return;
+    //         if(nexti >=0 && nextj >=0 && nexti < n && nextj < n && !visit[nexti][nextj]){
+    //             if(local[nexti][nextj] == 2 && localcopy[nexti][nextj]){
+    //                 distance += po.costs+1;
+    //                 if(distance >= min){
+    //                     return;
+    //                 }
+    //                 return;
+    //             }
+    //             else{
+    //                 visit[nexti][nextj] = true;
+    //                 que.offer(new point(nexti,nextj, po.costs+1));
+    //                 }
+    //             }
+    //         }  
+    //     }
+    //     return;
         
-    }
+    // }
 }

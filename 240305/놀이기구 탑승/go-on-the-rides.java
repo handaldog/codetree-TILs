@@ -20,7 +20,7 @@ public class Main {
             if(this.friends == e.friends){
                 if(this.vacant == e.vacant){
                     if(this.x == e.x){
-                        return this.x - e.y;
+                        return this.y - e.y;
                     }
                     else{
                         return this.x - e.x;
@@ -63,7 +63,6 @@ public class Main {
 
         while(!que.isEmpty()){
 
-            
 
             PriorityQueue<edge> pq = new PriorityQueue<>();
 
@@ -104,6 +103,8 @@ public class Main {
 
         for(int i=0;i<n;i++){
                 for(int j=0;j<n;j++){
+
+                    // System.out.println(play[i][j] + " ");
                     int friends = 0;
                     for(int k=0;k<4;k++){
                         

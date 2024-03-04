@@ -19,7 +19,7 @@ public class Main {
             
         }
     }
-    static long min = 1001;
+    static long min = 10000;
     static int n,m;
     static long distance;
     static int result[];

@@ -19,8 +19,9 @@ public class Main {
             
         }
     }
-    static int min = 10000000;
-    static int n,m, distance;
+    static long min = 10000000L;
+    static int n,m;
+    static long distance;
     static int result[];
     static int local[][];
     static boolean localcopy[][];

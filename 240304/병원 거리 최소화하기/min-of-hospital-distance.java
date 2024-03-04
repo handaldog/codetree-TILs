@@ -31,7 +31,7 @@ public class Main {
         
         Scanner sc = new Scanner(System.in);
 
-        n = sc.nextInt();
+         n = sc.nextInt();
          m = sc.nextInt();
 
         local = new int [n][n];
@@ -44,7 +44,7 @@ public class Main {
                     hospital.add(new point(i,j));
                 }
                 if(local[i][j] == 1){
-                    person.add(new point(i,j));
+                    person.add(new point(i,j,0));
                 }
             }
         }
@@ -53,7 +53,7 @@ public class Main {
 
         comb(0,0);
 
-        System.out.println(distance);
+        System.out.println(min);
 
     }
 
@@ -62,7 +62,7 @@ public class Main {
             distance = 0;
             localcopy = new boolean[n][n];
             for(int i=0;i<m;i++){
-                localcopy[hospital.get(i).x][hospital.get(i).y] = true;
+                localcopy[hospital.get(result[i]).x][hospital.get(result[i]).y] = true;
             }
 
             for(int i=0;i<person.size();i++){

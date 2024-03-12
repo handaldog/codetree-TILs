@@ -87,7 +87,7 @@ public class Main {
                     nexty += (gop*n);
                 }
                 else{
-                    nextx = nextx%n;
+                    nexty = nexty%n;
                 }
 
                 nutri.offer(new point(nextx, nexty));

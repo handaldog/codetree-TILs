@@ -70,7 +70,7 @@ public class Main {
                 if(nextx < 0){
                     int gop = 0;
                     gop += nextx/n;
-                    if(gop%n > 0)gop++;
+                    if(nextx%n > 0)gop++;
 
                     nextx += (gop*n);
                 }
@@ -81,7 +81,7 @@ public class Main {
                 if(nexty < 0){
                     int gop = 0;
                     gop += nexty/n;
-                    if(gop%n > 0)gop++;
+                    if(nexty%n > 0)gop++;
 
                     nexty += (gop*n);
                 }

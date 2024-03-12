@@ -62,35 +62,11 @@ public class Main {
 
                 point po = nutri.poll();
                 
-                int x = di[dir] * can;
-                int y = dj[dir] * can;
+                int x = (n + po.x + di[dir] * (can%n))%n;
+                int y = (n + po.y + dj[dir] * (can%n))%n;
 
-                int nextx = x + po.x;
-                int nexty = y + po.y;
 
-                if(nextx < 0){
-                    int gop = 0;
-                    gop += (nextx * -1)/n;
-                    if((nextx * -1)%n > 0)gop++;
-
-                    nextx += (gop*n);
-                }
-                else{
-                    nextx = nextx%n;
-                }
-
-                if(nexty < 0){
-                    int gop = 0;
-                    gop += (nexty * -1)/n;
-                    if((nexty * -1 )%n > 0)gop++;
-
-                    nexty += (gop*n);
-                }
-                else{
-                    nexty = nexty%n;
-                }
-
-                nutri.offer(new point(nextx, nexty));
+                nutri.offer(new point(x, y));
             } // while
 
             // 이동 시킨 특수 영양제를 투입한다. 그 자리 나무 수 +1과 true;

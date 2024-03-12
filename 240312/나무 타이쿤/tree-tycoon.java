@@ -55,6 +55,7 @@ public class Main {
 
             // 특수 영양제를 이동 규칙에 따라 이동시킵니다.
             int cnt = nutri.size();
+
             while(cnt > 0){
                 
                 cnt--;
@@ -69,8 +70,8 @@ public class Main {
 
                 if(nextx < 0){
                     int gop = 0;
-                    gop += nextx/n;
-                    if(nextx%n > 0)gop++;
+                    gop += (nextx * -1)/n;
+                    if((nextx * -1)%n > 0)gop++;
 
                     nextx += (gop*n);
                 }
@@ -80,8 +81,8 @@ public class Main {
 
                 if(nexty < 0){
                     int gop = 0;
-                    gop += nexty/n;
-                    if(nexty%n > 0)gop++;
+                    gop += (nexty * -1)/n;
+                    if((nexty * -1 )%n > 0)gop++;
 
                     nexty += (gop*n);
                 }

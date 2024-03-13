@@ -3,8 +3,8 @@ import java.util.*;
 public class Main {
 
     // 북 동 남 서
-    static int di[] = {0,-1,1,0};
-    static int dj[] = {-1,0,0,1};
+    static int di[] = {0,-1,0,1};
+    static int dj[] = {-1,0,1,0};
 
     static int backx[] = {1,0,-1,0};
     static int backy[] = {0,-1,0,1};
@@ -52,11 +52,7 @@ public class Main {
         //     }
         //     System.out.println();
         // }
-
-        // System.out.println("dir : " + dir);
-        // System.out.println("-------------------");
-
-        
+        // System.out.println("-------------");
 
 
             if(go(x, y, dir)){
@@ -94,11 +90,14 @@ public class Main {
 
         for(int i=0;i<n;i++){
             for(int j=0;j<m;j++){
+                // System.out.print(visit[i][j] + " ");
                 if(visit[i][j]){
                     answer++;
                 }
             }
+            // System.out.println();
         }
+        
 
         System.out.println(answer);
     }

@@ -67,7 +67,11 @@ public class Main {
 
     public static void comb(int x, int y, int start, int idx, int res){
         if(idx == 3){
+           
             for(int i=0;i<3;i++){
+
+                // System.out.print(result[i] + " ");
+
                 int nexti = x + otheri[result[i]];
                 int nextj = y + otherj[result[i]];
 
@@ -79,10 +83,11 @@ public class Main {
                 }
                 max = Math.max(max, res);
             }
+            // System.out.println();
             
             return;
         }
-        for(int k=start;k>4;k++){
+        for(int k=start;k<4;k++){
             result[idx] = k;
             comb(x,y,k+1, idx+1,res);
         }

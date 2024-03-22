@@ -76,8 +76,8 @@ public class Main {
         }
 
         // 정사각형 확인
-        for(int i=0;i<7;i++){
-            for(int j=0;j<7;j++){
+        for(int i=0;i<99;i++){
+            for(int j=0;j<99;j++){
                 if(visit[i][j]){
                     int cnt = 0;
                     for(int k=0;k<3;k++){

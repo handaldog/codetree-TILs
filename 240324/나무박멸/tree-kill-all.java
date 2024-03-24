@@ -72,8 +72,12 @@ public class Main {
 
             // System.out.println("한번");
 
-            drugcheck();
-
+            // for(int i=0;i<n;i++){
+            //     for(int j=0;j<n;j++){
+            //         System.out.print(area[i][j] + " ");
+            //     }
+            //     System.out.println();
+            // }
             treegrow();
 
 
@@ -83,24 +87,17 @@ public class Main {
 
             selectdrug();
 
-            // while(!pq.isEmpty()){
-
-            //     point po = pq.poll();
-            // System.out.println("pox : " + po.x + "poy : " + po.y + "trees : " + po.trees);
-
-            // }
 
             point po = pq.poll();
 
+            drugcheck();
+
+            // System.out.println("pox : " + po.x + "poy : " + po.y + "trees : " + po.trees);
             spreaddrug(po.x, po.y);
 
 
-            // for(int i=0;i<n;i++){
-            //     for(int j=0;j<n;j++){
-            //         System.out.print(area[i][j] + " ");
-            //     }
-            //     System.out.println();
-            // }
+
+
             time++;
 
         }
@@ -186,6 +183,8 @@ public class Main {
         for(int j=0;j<n;j++){
             int sum = area[i][j];
             if(area[i][j] > 0){
+                // System.out.println(area[i][j]);
+                // System.out.println(i + " " + j);
                     for(int kk=0;kk<4;kk++){
                 for(int h=1;h<=k;h++){
                         int nexti = i + spreadi[kk]*h;

@@ -221,7 +221,7 @@ public class Main {
                 answer += area[i][j];
 
                 area[i][j] = -2;
-                drug[i][j] = c;
+                drug[i][j] = c+1;
 
                     for(int kk=0;kk<4;kk++){
                         for(int h=1;h<=k;h++){
@@ -233,12 +233,12 @@ public class Main {
                             if(area[nexti][nextj] > 0){
                             answer += area[nexti][nextj]; 
                             area[nexti][nextj] = -2;
-                            drug[nexti][nextj] = c;
+                            drug[nexti][nextj] = c+1;
 
                             }
                             else {
                             area[nexti][nextj] = -2;
-                            drug[nexti][nextj] = c;
+                            drug[nexti][nextj] = c+1;
                             break;
                         }
                             }

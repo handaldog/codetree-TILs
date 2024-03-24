@@ -77,10 +77,6 @@ public class Main {
             treebreed();
             
 
-            pq = new PriorityQueue<>();
-
-            selectdrug();
-
             // for(int i=0;i<n;i++){
             //     for(int j=0;j<n;j++){
             //         System.out.print(area[i][j] + " ");
@@ -88,6 +84,12 @@ public class Main {
             //     System.out.println();
             // }
             //     System.out.println();
+            pq = new PriorityQueue<>();
+
+            selectdrug();
+
+            drugcheck();
+
 
             // System.out.println("pqsize : " + pq.size());
 
@@ -100,9 +102,9 @@ public class Main {
 
 
             // System.out.println("pox : " + po.x + "poy : " + po.y + "trees : " + po.trees);
-            drugcheck();
 
             time++;
+            
 
         }
 
@@ -236,6 +238,7 @@ public class Main {
                             }
                             else {
                             area[nexti][nextj] = -2;
+                            drug[nexti][nextj] = c;
                             break;
                         }
                             }

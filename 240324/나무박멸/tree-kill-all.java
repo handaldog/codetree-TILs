@@ -88,9 +88,6 @@ public class Main {
 
             selectdrug();
 
-            drugcheck();
-
-
             // System.out.println("pqsize : " + pq.size());
 
             if(!pq.isEmpty()){
@@ -104,6 +101,8 @@ public class Main {
             // System.out.println("pox : " + po.x + "poy : " + po.y + "trees : " + po.trees);
 
             time++;
+
+            drugcheck();
             
 
         }

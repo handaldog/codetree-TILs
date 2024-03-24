@@ -72,31 +72,35 @@ public class Main {
 
             // System.out.println("한번");
 
+            treegrow();
+
+            treebreed();
+            
+
+            pq = new PriorityQueue<>();
+
+            selectdrug();
+
             // for(int i=0;i<n;i++){
             //     for(int j=0;j<n;j++){
             //         System.out.print(area[i][j] + " ");
             //     }
             //     System.out.println();
             // }
-            treegrow();
+            //     System.out.println();
 
+            // System.out.println("pqsize : " + pq.size());
 
-            treebreed();
+            if(!pq.isEmpty()){
 
-            pq = new PriorityQueue<>();
+                point po = pq.poll();
+                spreaddrug(po.x, po.y);
 
-            selectdrug();
+            }       
 
-
-            point po = pq.poll();
-
-            drugcheck();
 
             // System.out.println("pox : " + po.x + "poy : " + po.y + "trees : " + po.trees);
-            spreaddrug(po.x, po.y);
-
-
-
+            drugcheck();
 
             time++;
 
@@ -215,6 +219,7 @@ public class Main {
                 answer += area[i][j];
 
                 area[i][j] = -2;
+                drug[i][j] = c;
 
                     for(int kk=0;kk<4;kk++){
                         for(int h=1;h<=k;h++){
@@ -260,6 +265,7 @@ public class Main {
             }
         }
     }
+
 
 
 

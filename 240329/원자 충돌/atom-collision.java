@@ -31,7 +31,9 @@ public class Main {
     static int onex[] = {0,2,4,6};
     static int twox[] = {1,3,5,7};
 
-    static int n,m,k,answer;
+    static int n,m,k;
+
+    static long answer;
    
     static ArrayList<point>[][] area;
     static ArrayList<point> list;

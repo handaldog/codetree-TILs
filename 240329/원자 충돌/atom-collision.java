@@ -74,9 +74,9 @@ public class Main {
 
             changeone();
 
-            result();
 
         }
+            result();
 
         System.out.println(answer);
 

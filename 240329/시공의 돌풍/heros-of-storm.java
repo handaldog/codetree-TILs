@@ -40,13 +40,22 @@ public class Main {
                 }
             }
         }
-        for(int tc=0;tc<1;tc++){
+        for(int tc=0;tc<t;tc++){
 
             // System.out.println("야");
             
             areacopy = new int [n][m];
 
             spread();
+
+        //     for(int i=0;i<n;i++){
+        //     for(int j=0;j<m;j++){
+                
+        //         System.out.print(area[i][j] + " ");
+        //     }
+        //     System.out.println();
+        // }
+        // System.out.println(" ----------------------");
 
             spreadadd();
 

@@ -152,10 +152,10 @@ public class Main {
                         sum += po.m;
                         sok += po.s;
 
-                        if(po.d == 0 || po.d == 2 || po.d == 4 || po.d == 6){
+                        if(po.d%2 == 0){
                             one++;
                         }
-                        else if(po.d == 1 || po.d == 3 || po.d == 5 || po.d == 7){
+                        else if(po.d%2 == 1){
                             two++;
                         }
 

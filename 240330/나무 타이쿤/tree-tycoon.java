@@ -5,10 +5,17 @@ public class Main {
     static class point{
         int x;
         int y;
+        int add;
 
         point(int x, int y){
             this.x = x;
             this.y = y;
+        }
+
+        point(int x, int y, int add){
+            this.x = x;
+            this.y = y;
+            this.add = add;
         }
     }
 
@@ -19,6 +26,8 @@ public class Main {
     static int DJ[] = {-1,1,-1,1};
 
     static boolean visit[][];
+
+    static ArrayList<point> addlist;
 
     public static void main(String[] args) {
         
@@ -45,6 +54,8 @@ public class Main {
 
         for(int year=0;year<m;year++){
 
+            addlist = new ArrayList<>();
+
             visit = new boolean[n][n];
 
             int dir = sc.nextInt();
@@ -60,14 +71,15 @@ public class Main {
 
                 point po = nutri.poll();
                 
-                int x = (po.x + (di[dir] * can) +n* can)%n;
-                int y = (po.y + dj[dir] * can +n* can)%n;
+                int x = (n + po.x + di[dir] * (can % n)) % n;
+                int y = (n + po.y + dj[dir] * (can % n)) % n;
+                // int y = (po.y + dj[dir] * can +n* can)%n;
 
+                area[x][y]++;
 
                 nutri.offer(new point(x, y));
             } // while
 
-            // System.out.println(nutri.size());
 
             // 이동 시킨 특수 영양제를 투입한다. 그 자리 나무 수 +1과 true;
             while(!nutri.isEmpty()){
@@ -75,8 +87,6 @@ public class Main {
                 point po = nutri.poll();
 
                 int check = 0;
-
-                area[po.x][po.y]+=1;
 
                 for(int k=0;k<4;k++){
 
@@ -88,15 +98,24 @@ public class Main {
                 }
                     }
 
-                area[po.x][po.y] += check;
+                addlist.add(new point(po.x, po.y, check));
 
                 visit[po.x][po.y] = true;
 
 
             }
+            
+                for(int i=0;i<addlist.size();i++){
+                    point po = addlist.get(i);
 
+                    // System.out.println("x : " + po.x + "y :" + po.y + "add : " + po.add);
+
+                    area[po.x][po.y] += po.add;
+                }                
+            
             // 특수 영양제를 투입한 부분 제외하고 높이가 2인 이상의 나무 높이를 -2 하고 
             // 해당 위치에 약물을 놓는다
+
 
             for(int i=0;i<n;i++){
                 for(int j=0;j<n;j++){
@@ -105,17 +124,14 @@ public class Main {
                         nutri.offer(new point(i,j));
                     }
                 }
+
             }
 
-//             for(int i=0;i<n;i++){
-//                 for(int j=0;j<n;j++){
-//                     System.out.print(area[i][j] + " ");
-//                 }
-//                 System.out.println();
-//             }
-// System.out.println("--------------");
-            
+            // System.out.println(nutri.size());
 
+            // System.out.println(area[0][3]);
+
+        
         }
 
 

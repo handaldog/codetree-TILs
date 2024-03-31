@@ -93,8 +93,8 @@ public class Main {
 
                     point po = area[i][j].get(l);
 
-                    int nexti = (n + di[po.d] * (po.s%n))%n;
-                    int nextj = (n + dj[po.d] * (po.s%n))%n;
+                    int nexti = (n + i +di[po.d] * (po.s%n))%n;
+                    int nextj = (n + j +dj[po.d] * (po.s%n))%n;
                     
                     // int gox = di[po.d] * po.s;
                     // int goy = dj[po.d] * po.s;

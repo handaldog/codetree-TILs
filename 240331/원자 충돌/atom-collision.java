@@ -66,6 +66,8 @@ public class Main {
 
             move();
 
+            // System.out.println(list.size());
+
             for(int i=0;i<n;i++){
             for(int j=0;j<n;j++){
                 area[i][j] = new ArrayList<>();
@@ -96,33 +98,6 @@ public class Main {
                     int nexti = (n + i +di[po.d] * (po.s%n))%n;
                     int nextj = (n + j +dj[po.d] * (po.s%n))%n;
                     
-                    // int gox = di[po.d] * po.s;
-                    // int goy = dj[po.d] * po.s;
-
-                    // int nexti = i + gox;
-                    // int nextj = j + goy;
-
-                    // if(nexti < 0 && Math.abs(nexti)%n > 0){
-                    //     nexti = nexti + (((Math.abs(nexti)/n)*n) + n);
-                    // }
-                    // else if(nexti < 0 && Math.abs(nexti)%n == 0){
-                    //     nexti = nexti + ((Math.abs(nexti)/n)*n);
-
-                    // }
-                    // else if(nexti >= n){
-                    //     nexti = nexti%n;
-                    // }
-                    // if(nextj < 0 && Math.abs(nextj)%n > 0){
-                    //     nextj = nextj + (((Math.abs(nextj)/n)*n) + n);
-
-                    // }
-                    // else if(nextj < 0 && Math.abs(nextj)%n == 0){
-                    //     nextj = nextj + ((Math.abs(nextj)/n)*n);
-
-                    // }
-                    // else if(nextj >= n){
-                    //     nextj = nextj%n;
-                    // }
 
                     list.add(new point(nexti, nextj, po.m,po.s,po.d));
                    
@@ -143,6 +118,9 @@ public class Main {
         for(int i=0;i<n;i++){
             for(int j=0;j<n;j++){
                 if(area[i][j].size() >= 2){
+
+                    // System.out.println("x : "+ i + "y :" + j);
+                    // System.out.println(area[i][j].size());
                     int sum = 0;
                     int sok = 0;
                     int one = 0;
@@ -165,7 +143,10 @@ public class Main {
 
 
                     }
-                        if(sum/5 > 0 && (one == 0 && two > 0)  || (one > 0 && two == 0)){
+
+                    // System.out.println("sum : " + sum);
+                    // System.out.println("sum/5 : " + sum/5);
+                        if(sum/5 > 0 && ((one == 0 && two > 0)  || (one > 0 && two == 0))){
                             for(int k=0;k<4;k++){
                                 area[i][j].add(new point(sum/5,sok/size,onex[k]));
                             }

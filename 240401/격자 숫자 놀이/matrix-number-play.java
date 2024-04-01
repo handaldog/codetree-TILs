@@ -25,8 +25,13 @@ public class Main {
             }
         }
 
+            if(area[r-1][c-1] == k){
+                System.out.println(time);
+                return;
+            }
         
         while(true){
+
 
             // System.out.println("야");
 

@@ -48,36 +48,14 @@ public class Main {
             }
         }
 
-
-        for(int i=0;i<n;i++){
-            for(int j=0;j<n;j++){
-                if(visit[i][j])continue;
-                visit[i][j] = true;
-                point po = bfs(i,j);
-                list.add(po);
-            }
-        }
-        // System.out.println(list.size());
-        sum = 0;
-        comb(0,0);
+       
         // System.out.println(sum);
 
         // bingbing();
 
-        for(int tc=0;tc<3;tc++){
+        for(int tc=0;tc<4;tc++){
             
        
-     tenbin();
-
-            bingbing();
-
-            // for(int i=0;i<n;i++){
-            //     for(int j=0;j<n;j++){
-            //         System.out.print(area[i][j]);
-            //     }
-            //     System.out.println();
-            // }
-            //     System.out.println("----------------");
             list = new ArrayList<>();
             visit = new boolean[n][n];
             for(int i=0;i<n;i++){
@@ -90,6 +68,17 @@ public class Main {
         }
             sum = 0;
             comb(0,0);
+     tenbin();
+
+            bingbing();
+
+            // for(int i=0;i<n;i++){
+            //     for(int j=0;j<n;j++){
+            //         System.out.print(area[i][j]);
+            //     }
+            //     System.out.println();
+            // }
+            //     System.out.println("----------------");
             // System.out.println(sum);
             // System.out.println(sum);
 
